@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Varela+Round&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -128,6 +129,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background h-screen text-foreground;
   }
 }
