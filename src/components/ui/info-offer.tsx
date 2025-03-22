@@ -1,0 +1,68 @@
+import { Button } from './button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from './dialog';
+
+const informasi = [
+  {
+    desc: 'Penawaran ini bertujuan untuk menyeimbangkan budget anda dalam melakukan pembuatan logo profesional.',
+  },
+  {
+    desc: 'Jika budget dibawah 200 Ribu, anda akan mendapatkan pelayanan 1x Batas revisi keseluruhan logo, apabila tidak cocok dengan hasil desain.',
+  },
+  {
+    desc: 'Dan dengan budget diatas 200 Ribu, anda mendapatkan keseluruhan file yang terdiri dari master logo, file png transparant, favicon, dan logo dengan konsep satu warna.',
+  },
+  {
+    desc: 'Budget dibawah 300 Ribu, kami tidak bisa memberikan pelayanan pembuatan logo dengan konsep maskod logo dan character wajah.',
+  },
+  {
+    desc: 'Dengan maksimal revisi 3x pilihan logo, tentunya anda akan mudah melakukan pemilihan logo yang sangat cocok untuk branding anda, ini jika berada di budget diatas 300 Ribu.',
+  },
+  {
+    desc: 'Dengan maksimal revisi 3x pilihan logo, tentunya anda akan mudah melakukan pemilihan logo yang sangat cocok untuk branding anda, ini jika berada di budget diatas 300 Ribu.',
+  },
+];
+
+export default function InfoOffer() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className="cursor-pointer absolute -top-5 -right-5 w-20 h-20 bg-white hover:bg-gray-200 text-[45px] text-primarycustom font-normal drop-shadow-lg rounded-full flex items-center justify-center">
+          ?
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[650px] p-9 rounded-4xl">
+        <DialogHeader>
+          <DialogTitle className="text-[25px]">Informasi Penawaran</DialogTitle>
+        </DialogHeader>
+        <div className="flex flex-col gap-5 text-gray-400">
+          {informasi.map((info, index) => {
+            return (
+              <p key={index} className="text-sm">
+                {info.desc}
+              </p>
+            );
+          })}
+          <span className="text-xs">
+            Syarat & Ketentuan © 2020 JDesignLogo.com The Terms and Conditions
+            are made entirely by us
+          </span>
+        </div>
+        <DialogClose>
+          <Button
+            type="button"
+            className="cursor-pointer w-full bg-primarycustom hover:bg-sky-700 p-7 text-xl rounded-full"
+          >
+            Tutup Sementara
+          </Button>
+        </DialogClose>
+      </DialogContent>
+    </Dialog>
+  );
+}

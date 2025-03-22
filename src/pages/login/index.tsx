@@ -1,5 +1,5 @@
-import { LoginForm } from '@/components/ui/login-form';
 import { Link } from 'react-router-dom';
+import LoginForm from '@/components/ui/login-form';
 
 export default function Login() {
   return (
