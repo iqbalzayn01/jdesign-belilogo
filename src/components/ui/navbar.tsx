@@ -1,7 +1,6 @@
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
 import { Link } from 'react-router-dom';
@@ -20,12 +19,10 @@ export default function Navbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {components.map((component, index) => {
+        {components.map((component) => {
           return (
-            <NavigationMenuItem key={index}>
-              <Link to={component.href}>
-                <NavigationMenuLink>{component.title}</NavigationMenuLink>
-              </Link>
+            <NavigationMenuItem key={component.title}>
+              <Link to={component.href}>{component.title}</Link>
             </NavigationMenuItem>
           );
         })}
