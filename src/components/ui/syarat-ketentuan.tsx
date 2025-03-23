@@ -31,7 +31,10 @@ export default function SyaratKetentuan() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="cursor-pointer bg-transparent text-xs text-primarycustom hover:bg-transparent shadow-none p-0 border-none outline-none focus:outline-none">
+        <Button
+          type="button"
+          className="cursor-pointer bg-transparent text-xs text-primarycustom hover:bg-transparent shadow-none p-0 border-none outline-none focus:outline-none"
+        >
           Syarat dan Ketentuan
         </Button>
       </DialogTrigger>
@@ -55,13 +58,8 @@ export default function SyaratKetentuan() {
           </span>
         </div>
         <Separator />
-        <DialogClose>
-          <Button
-            type="button"
-            className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full"
-          >
-            Tutup Sementara
-          </Button>
+        <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full">
+          Tutup Sementara
         </DialogClose>
       </DialogContent>
     </Dialog>

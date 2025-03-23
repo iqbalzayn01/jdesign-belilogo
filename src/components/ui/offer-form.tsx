@@ -13,7 +13,7 @@ import InfoOffer from './info-offer';
 export default function OfferForm() {
   return (
     <Card
-      className="relative hidden md:flex w-[584px] shadow-2xl rounded-3xl"
+      className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl"
       style={{
         padding: 'clamp(2rem, 5vw, 3rem) clamp(0.5rem, 1vw, 1rem',
       }}

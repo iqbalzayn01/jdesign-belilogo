@@ -19,7 +19,7 @@ export default function RegisterForm({
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card className="relative px-5 py-10">
-        <CardHeader>
+        <CardHeader className="mb-5">
           <CardTitle className="text-[40px] text-center">
             Kontribusi Registrasi
           </CardTitle>

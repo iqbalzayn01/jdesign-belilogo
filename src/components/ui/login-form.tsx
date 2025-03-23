@@ -17,11 +17,11 @@ export default function LoginForm({
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card className="relative px-5 py-10">
-        <CardHeader>
+        <CardHeader className="mb-5">
           <CardTitle className="text-[40px] text-center">
             Login Jual Logo
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-xs text-center">
             Silahkan login untuk melanjutkan ke halaman form upload logo anda,
             tulis username dan password dengan benar sesuai yang sudah terdaftar
             oleh admin.
@@ -73,14 +73,14 @@ export default function LoginForm({
                 Login Sekarang
               </Button>
             </div>
-            <div className="mt-4 text-center text-sm">
+            <div className="mt-4 text-center text-xs">
               Anda ingin bergabung menjadi Contributor?{' '}
-              <a
-                href="/register"
-                className="text-sm text-primarycustom hover:underline underline-offset-4"
+              <Link
+                to={`/register`}
+                className="text-xs text-primarycustom hover:underline underline-offset-4"
               >
                 Daftar Sekarang
-              </a>
+              </Link>
             </div>
           </form>
         </CardContent>

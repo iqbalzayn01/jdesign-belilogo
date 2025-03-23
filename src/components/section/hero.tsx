@@ -11,23 +11,23 @@ import OfferForm from '@/components/ui/offer-form';
 export default function Hero() {
   return (
     <div
-      className="h-[920px] bg-cover bg-center bg-no-repeat bg-fixed"
+      className="flex items-center justify-center h-[600px] md:h-[920px] bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
         backgroundImage: `url('/assets/headernew2.jpg')`,
       }}
     >
       <section className="container mx-auto px-5">
-        <div className="flex justify-between pt-40">
-          <div className="flex flex-col gap-2">
-            <h1 className="max-w-[865px] text-[75px] text-white">
+        <div className="flex justify-between pt-16">
+          <div className="flex flex-col gap-5">
+            <h1 className="max-w-[865px] text-center md:text-left text-2xl md:text-[37.5px] lg:text-[75px] text-white">
               Buat Logo Impian Untuk Kualitas Branding yang Berkualitas
             </h1>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center justify-center md:justify-normal gap-5">
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-white text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-[45px] py-[29px] rounded-full"
+                    className="bg-white text-sm md:text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] py-[29px] rounded-full"
                   >
                     Open popover
                   </Button>
@@ -59,7 +59,7 @@ export default function Hero() {
               </Popover>
               <Link
                 to={'/register'}
-                className="bg-amber-500 text-xl text-center text-white hover:drop-shadow-xl px-[45px] py-[16px] rounded-full"
+                className="bg-amber-500 text-sm md:text-xl text-center text-white hover:drop-shadow-xl px-5 md:px-[45px] py-[16px] rounded-full"
               >
                 Daftar Kontributor
               </Link>
