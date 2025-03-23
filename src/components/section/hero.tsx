@@ -1,0 +1,73 @@
+import { Button } from '@/components/ui/button';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { Link } from 'react-router-dom';
+import { Search } from 'lucide-react';
+import OfferForm from '@/components/ui/offer-form';
+
+export default function Hero() {
+  return (
+    <div
+      className="h-[920px] bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{
+        backgroundImage: `url('/assets/headernew2.jpg')`,
+      }}
+    >
+      <section className="container mx-auto px-5">
+        <div className="flex justify-between pt-40">
+          <div className="flex flex-col gap-2">
+            <h1 className="max-w-[865px] text-[75px] text-white">
+              Buat Logo Impian Untuk Kualitas Branding yang Berkualitas
+            </h1>
+            <div className="flex items-center gap-5">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="bg-white text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-[45px] py-[29px] rounded-full"
+                  >
+                    Open popover
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  className="bg-transparent w-full border-0 p-0 hover:drop-shadow-xl shadow-none"
+                  align="start"
+                  sideOffset={20}
+                >
+                  <div className="flex items-center gap-0">
+                    <Button
+                      variant={'outline'}
+                      className="cursor-pointer justify-between p-0 w-[600px] h-12 border-none rounded-l-full"
+                    >
+                      <span className="px-10 text-lg text-primarycustom">
+                        Entertainment & Media
+                      </span>
+                    </Button>
+                    <Button
+                      variant={'outline'}
+                      className="cursor-pointer bg-transparent justify-between p-0 h-12 border-none rounded-full"
+                    >
+                      <span className="flex items-center justify-around bg-amber-500 w-16 h-12 rounded-r-full">
+                        <Search color="white" />
+                      </span>
+                    </Button>
+                  </div>
+                </PopoverContent>
+              </Popover>
+              <Link
+                to={'/register'}
+                className="bg-amber-500 text-xl text-center text-white hover:drop-shadow-xl px-[45px] py-[16px] rounded-full"
+              >
+                Daftar Kontributor
+              </Link>
+            </div>
+          </div>
+          <OfferForm />
+        </div>
+      </section>
+    </div>
+  );
+}
