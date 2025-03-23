@@ -57,7 +57,7 @@ export default function InfoOffer() {
         <DialogClose>
           <Button
             type="button"
-            className="cursor-pointer w-full bg-primarycustom hover:bg-sky-700 p-7 text-xl rounded-full"
+            className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full"
           >
             Tutup Sementara
           </Button>
