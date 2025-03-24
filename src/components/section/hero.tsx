@@ -27,7 +27,7 @@ export default function Hero() {
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-white text-sm md:text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] py-[29px] rounded-full"
+                    className="bg-white text-sm md:text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
                   >
                     Open popover
                   </Button>
@@ -59,7 +59,7 @@ export default function Hero() {
               </Popover>
               <Link
                 to={'/register'}
-                className="bg-amber-500 text-sm md:text-xl text-center text-white hover:drop-shadow-xl px-5 md:px-[45px] py-[16px] rounded-full"
+                className="bg-amber-500 text-sm md:text-xl text-center text-white hover:drop-shadow-xl px-5 md:px-[45px] py-2 md:py-[16px] rounded-full"
               >
                 Daftar Kontributor
               </Link>

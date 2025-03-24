@@ -26,7 +26,7 @@ export default function Homepage() {
   return (
     <>
       <header
-        className={`mx-auto px-5 md:px-10 py-[10px] fixed w-full top-0 z-20 ${
+        className={`mx-auto px-3 md:px-10 py-[10px] fixed w-full top-0 z-20 ${
           scroll ? 'bg-white/85' : 'bg-transparent'
         }`}
       >
