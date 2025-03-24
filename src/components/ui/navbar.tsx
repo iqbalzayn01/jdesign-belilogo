@@ -16,38 +16,43 @@ const components: { title: string; href: string }[] = [
   { title: 'Dribbble', href: '/#' },
 ];
 
-export default function Navbar({ scroll }: { scroll?: boolean }) {
+interface NavbarProps {
+  className?: string;
+  scroll?: boolean;
+}
+
+export default function Navbar({ className, scroll }: NavbarProps) {
   const getLinkStyle = (index: number) => {
-    const isDribbble = index === components.length - 1;
     const baseStyle = 'text-[14px]';
 
-    if (isDribbble) {
-      return `${baseStyle} bg-[#127CCF] rounded-full px-[45px] py-5 ${
-        scroll
-          ? 'text-[#C4E4FF] hover:text-white'
-          : 'text-[#C4E4FF] hover:text-white'
-      }`;
-    }
-
-    return `${baseStyle} p-[7.5px] ${
-      scroll
-        ? 'text-black hover:text-black/70'
-        : 'text-[#C4E4FF] hover:text-white'
+    return `${baseStyle} ${
+      index === components.length - 1
+        ? `bg-[#127CCF] rounded-full px-[45px] py-5 ${
+            scroll
+              ? 'text-[#C4E4FF] hover:text-white'
+              : 'text-[#C4E4FF] hover:text-white'
+          }`
+        : `p-[7.5px] ${
+            scroll
+              ? 'text-black hover:text-black/70'
+              : 'text-[#C4E4FF] hover:text-white'
+          }`
     }`;
   };
 
   return (
-    <NavigationMenu className="hidden lg:block">
-      <NavigationMenuList className="gap-6">
-        {components.map((component, index) => {
-          return (
-            <NavigationMenuItem key={index}>
-              <Link to={component.href} className={getLinkStyle(index)}>
-                {component.title}
-              </Link>
-            </NavigationMenuItem>
-          );
-        })}
+    <NavigationMenu
+      className={`${className}`}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <NavigationMenuList className="flex-col items-start gap-9 lg:flex-row lg:items-center lg:gap-6">
+        {components.map((component, index) => (
+          <NavigationMenuItem key={index}>
+            <Link to={component.href} className={getLinkStyle(index)}>
+              {component.title}
+            </Link>
+          </NavigationMenuItem>
+        ))}
       </NavigationMenuList>
     </NavigationMenu>
   );

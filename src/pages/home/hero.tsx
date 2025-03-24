@@ -19,10 +19,10 @@ export default function Hero() {
       <section className="container mx-auto px-5">
         <div className="flex justify-between pt-16">
           <div className="flex flex-col gap-5">
-            <h1 className="max-w-[865px] text-center md:text-left text-2xl md:text-[37.5px] lg:text-[75px] text-white">
+            <h1 className="max-w-[865px] text-center lg:text-left text-2xl md:text-[37.5px] lg:text-[75px] text-white">
               Buat Logo Impian Untuk Kualitas Branding yang Berkualitas
             </h1>
-            <div className="flex items-center justify-center md:justify-normal gap-5">
+            <div className="flex items-center justify-center lg:justify-normal gap-5">
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
