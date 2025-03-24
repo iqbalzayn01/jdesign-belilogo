@@ -31,7 +31,7 @@ export default function Header() {
       className={`mx-auto px-3 md:px-10 py-[10px] fixed drop-shadow-xl lg:drop-shadow-none overflow-hidden w-full transition-all duration-500 ease-in-out top-0 z-20 ${
         scroll ? 'bg-white/85' : 'bg-primarycustom lg:bg-transparent'
       }
-        ${isMenuOpen ? 'h-[62%]' : 'h-[8.5%]'}
+        ${isMenuOpen ? 'h-[610px]' : 'h-[85px] lg:h-auto'}
         `}
     >
       <div className="flex w-full items-center justify-between">

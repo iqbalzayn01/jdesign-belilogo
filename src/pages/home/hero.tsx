@@ -33,24 +33,24 @@ export default function Hero() {
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent
-                  className="bg-transparent w-full border-0 p-0 hover:drop-shadow-xl shadow-none"
+                  className="bg-transparent border-0 p-0 hover:drop-shadow-xl shadow-none"
                   align="start"
                   sideOffset={20}
                 >
                   <div className="flex items-center gap-0">
                     <Button
                       variant={'outline'}
-                      className="cursor-pointer justify-between p-0 w-[600px] h-12 border-none rounded-l-full"
+                      className="cursor-pointer justify-between p-0 w-[255px] md:w-[445px] xl:w-[600px] md:h-12 border-none rounded-l-full"
                     >
-                      <span className="px-10 text-lg text-primarycustom">
+                      <span className="px-5 md:px-10 md:text-lg text-primarycustom">
                         Entertainment & Media
                       </span>
                     </Button>
                     <Button
                       variant={'outline'}
-                      className="cursor-pointer bg-transparent justify-between p-0 h-12 border-none rounded-full"
+                      className="cursor-pointer bg-transparent justify-between p-0 md:h-12 border-none rounded-full"
                     >
-                      <span className="flex items-center justify-around bg-amber-500 w-16 h-12 rounded-r-full">
+                      <span className="flex items-center justify-around bg-amber-500 w-16 h-9 md:h-12 rounded-r-full">
                         <Search color="white" />
                       </span>
                     </Button>
