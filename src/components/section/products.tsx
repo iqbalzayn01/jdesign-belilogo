@@ -189,6 +189,7 @@ export default function Products() {
               <PaginationPrevious
                 aria-disabled={currentPage === 1}
                 onClick={() => setCurrentPage(currentPage - 1)}
+                className="cursor-pointer"
               />
             </PaginationItem>
             {getPages().map((page, index) => (
@@ -212,6 +213,7 @@ export default function Products() {
               <PaginationNext
                 aria-disabled={currentPage === totalPages}
                 onClick={() => setCurrentPage(currentPage + 1)}
+                className="cursor-pointer"
               />
             </PaginationItem>
           </PaginationContent>
