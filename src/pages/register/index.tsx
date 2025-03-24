@@ -1,6 +1,6 @@
 import Logo from '@/components/ui/logo';
-import RegisterForm from '@/components/ui/register-form';
-import Footer from '@/components/section/footer';
+import Footer from '@/components/ui/footer';
+import RegisterForm from './register-form';
 
 export default function Register() {
   return (

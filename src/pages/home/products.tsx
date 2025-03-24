@@ -12,7 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
-import { Button } from '../ui/button';
+import { Button } from '../../components/ui/button';
 
 // Asumsi: data produk diambil dari state atau API
 const products = Array.from({ length: 382 }, (_, index) => ({
@@ -81,7 +81,7 @@ const ProductCard: React.FC<{ product: (typeof products)[0] }> = ({
             className="bg-white hover:bg-zinc-100 text-sm text-black border border-zinc-200"
             asChild
           >
-            <Link to={'/belilogo'} onClick={handleBeliLogoClick}>
+            <Link to={'/detail-logo'} onClick={handleBeliLogoClick}>
               Beli Logo
             </Link>
           </Button>

@@ -16,7 +16,7 @@ const components: { title: string; href: string }[] = [
   { title: 'Dribbble', href: '/#' },
 ];
 
-export default function Navbar({ scroll }: { scroll: boolean }) {
+export default function Navbar({ scroll }: { scroll?: boolean }) {
   const getLinkStyle = (index: number) => {
     const isDribbble = index === components.length - 1;
     const baseStyle = 'text-[14px]';

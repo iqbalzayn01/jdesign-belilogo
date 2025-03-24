@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/ui/navbar';
 import Logo from '@/components/ui/logo';
-import Hero from '@/components/section/hero';
-import Products from '@/components/section/products';
-import Footer from '@/components/section/footer';
+import Footer from '@/components/ui/footer';
+import Hero from './hero';
+import Products from './products';
 
 export default function Homepage() {
   const [scroll, setScroll] = useState(false);

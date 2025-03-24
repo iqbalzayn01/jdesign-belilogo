@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/popover';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
-import OfferForm from '@/components/ui/offer-form';
+import OfferForm from './offer-form';
 
 export default function Hero() {
   return (

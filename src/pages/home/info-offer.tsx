@@ -1,4 +1,4 @@
-import { Button } from './button';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -6,7 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from './dialog';
+} from '@/components/ui/dialog';
 
 const informasi = [
   {

@@ -1,6 +1,6 @@
 import Logo from '@/components/ui/logo';
-import LoginForm from '@/components/ui/login-form';
-import Footer from '@/components/section/footer';
+import Footer from '@/components/ui/footer';
+import LoginForm from './login-form';
 
 export default function Login() {
   return (
