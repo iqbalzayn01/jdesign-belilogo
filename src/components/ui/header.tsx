@@ -41,7 +41,7 @@ export default function Header() {
           }`}
         />
         <div
-          className={`absolute -z-50 lg:relative lg:w-auto translate-y-2/3 lg:translate-y-0`}
+          className={`absolute lg:relative lg:w-auto translate-y-2/3 lg:translate-y-0`}
         >
           <Navbar scroll={scroll} />
         </div>

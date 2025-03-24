@@ -29,7 +29,7 @@ export default function Hero() {
                     variant="outline"
                     className="bg-white text-sm md:text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
                   >
-                    Open popover
+                    Cari Sekarang
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent

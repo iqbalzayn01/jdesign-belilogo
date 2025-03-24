@@ -41,11 +41,8 @@ export default function Navbar({ className, scroll }: NavbarProps) {
   };
 
   return (
-    <NavigationMenu
-      className={`${className}`}
-      onClick={(e) => e.stopPropagation()}
-    >
-      <NavigationMenuList className="flex-col items-start gap-9 lg:flex-row lg:items-center lg:gap-6">
+    <NavigationMenu className={`${className}`}>
+      <NavigationMenuList className="flex-col items-start gap-9 lg:gap-2 lg:flex-row lg:items-center xl:gap-6">
         {components.map((component, index) => (
           <NavigationMenuItem key={index}>
             <Link to={component.href} className={getLinkStyle(index)}>
