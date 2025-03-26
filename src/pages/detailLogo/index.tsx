@@ -30,7 +30,7 @@ export default function DetailLogo() {
   return (
     <>
       <Header />
-      <div className="pt-32">
+      <div className="bg-zinc-100 py-32">
         <div className="container mx-auto px-5">
           <div className="flex w-full flex-col md:flex-row justify-center gap-5">
             <Card className="size-full lg:size-[40%] py-2.5">
@@ -70,7 +70,7 @@ export default function DetailLogo() {
               })}
               <Separator />
               <Dialog>
-                <DialogTrigger className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] px-7 py-4 text-xl rounded-full">
+                <DialogTrigger className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] text-sm lg:text-lg font-normal py-2 rounded-full">
                   Beli Logo
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[600px]">
@@ -85,7 +85,7 @@ export default function DetailLogo() {
                         id="name"
                         name="name"
                         placeholder="Nama Lengkap"
-                        className="text-[15px] font-normal px-6 py-7"
+                        className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                       />
                     </div>
                     <div className="grid items-center gap-4">
@@ -93,7 +93,7 @@ export default function DetailLogo() {
                         id="branding"
                         name="branding"
                         placeholder="Nama Branding (Alibaba)"
-                        className="text-[15px] font-normal px-6 py-7"
+                        className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                       />
                     </div>
                     <div className="grid items-center gap-4">
@@ -101,7 +101,7 @@ export default function DetailLogo() {
                         id="whatsappnumber"
                         name="whatsappnumber"
                         placeholder="Nomor Whatsapp"
-                        className="text-[15px] font-normal px-6 py-7"
+                        className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                       />
                     </div>
                     <div className="grid items-center gap-4">
@@ -110,7 +110,7 @@ export default function DetailLogo() {
                         name="datalogo"
                         value="u for up logo | Design By Dimassetiawan"
                         placeholder="u for up logo | Design By Dimassetiawan"
-                        className="text-[15px] font-normal px-6 py-7"
+                        className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                         disabled
                       />
                     </div>
@@ -120,7 +120,7 @@ export default function DetailLogo() {
                         name="datalogo"
                         value="Rp.100.000"
                         placeholder="Rp.100.000"
-                        className="text-[15px] font-normal px-6 py-7"
+                        className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                         disabled
                       />
                     </div>
@@ -128,7 +128,7 @@ export default function DetailLogo() {
                   <div className="flex w-full flex-col items-center gap-2">
                     <Button
                       type="submit"
-                      className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full"
+                      className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] text-lg lg:text-xl font-normal py-5 lg:py-[30px] rounded-full"
                     >
                       Beli Logo
                     </Button>
