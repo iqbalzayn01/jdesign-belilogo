@@ -38,7 +38,7 @@ export default function DetailLogo() {
                 <div className="aspect-square rounded-xl bg-muted/50" />
               </CardContent>
             </Card>
-            <div className="flex size-full lg:size-[35%] flex-col gap-6">
+            <div className="flex size-full lg:size-[55%] flex-col gap-6">
               <h2 className="text-lg">u for up logo Rp.100.000</h2>
               <p className="text-xs text-zinc-500 font-medium">
                 Apa saja yang anda dapatkan setelah memesan logo dari
@@ -58,7 +58,7 @@ export default function DetailLogo() {
                         width={25}
                         height={25}
                       />
-                      <span className="text-[25px] font-semibold">
+                      <span className="text-lg md:text-[25px] text-zinc-500 font-semibold">
                         {fitur.title}
                       </span>
                     </div>
