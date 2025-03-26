@@ -8,6 +8,7 @@ import Login from '@/pages/login';
 import Register from '@/pages/register';
 import Homepage from '@/pages/home';
 import DetailLogo from '@/pages/detailLogo';
+import DesignerPage from '@/pages/designer';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/detaillogo" element={<DetailLogo />} />
+      <Route path="/designer" element={<DesignerPage />} />
     </>
   )
 );
