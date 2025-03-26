@@ -1,11 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Button } from './button';
+import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/ui/navbar';
 import Logo from '@/components/ui/logo';
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const pathConfig: Record<string, { headercontrol: boolean }> = {
+    '/': { headercontrol: true },
+    '/detaillogo': { headercontrol: false },
+  };
+
+  const isHeadercontrol = pathConfig[location.pathname]?.headercontrol;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,10 +38,12 @@ export default function Header() {
   return (
     <header
       className={`mx-auto px-3 md:px-10 py-[10px] fixed drop-shadow-xl lg:drop-shadow-none overflow-hidden w-full transition-all duration-500 ease-in-out top-0 z-20 ${
-        scroll ? 'bg-white/85' : 'bg-primarycustom lg:bg-transparent'
-      }
-        ${isMenuOpen ? 'h-[610px]' : 'h-[85px] lg:h-auto'}
-        `}
+        scroll
+          ? 'bg-white/85'
+          : isHeadercontrol
+          ? 'lg:bg-transparent bg-primarycustom'
+          : 'bg-primarycustom'
+      } ${isMenuOpen ? 'h-[600px]' : 'h-[85px] lg:h-auto'}`}
     >
       <div className="flex w-full items-center justify-between">
         <Logo
@@ -41,7 +52,7 @@ export default function Header() {
           }`}
         />
         <div
-          className={`absolute lg:relative lg:w-auto translate-y-2/3 lg:translate-y-0`}
+          className={`absolute lg:relative lg:w-auto translate-y-3/5 lg:translate-y-0`}
         >
           <Navbar scroll={scroll} />
         </div>

@@ -50,7 +50,7 @@ const ProductCard: React.FC<{ product: (typeof products)[0] }> = ({
         </CardContent>
         <Link
           to={'/designer'}
-          className="absolute bottom-0 right-0 z-10 bg-zinc-50 text-xs text-zinc-500 border px-3 py-1 rounded-full"
+          className="absolute bottom-0 right-0 z-10 bg-zinc-50 text-[10px] text-zinc-500 border px-1 lg:px-3 py-1 rounded-full"
         >
           Lihat Designer
         </Link>
@@ -81,7 +81,7 @@ const ProductCard: React.FC<{ product: (typeof products)[0] }> = ({
             className="bg-white hover:bg-zinc-100 text-sm text-black border border-zinc-200"
             asChild
           >
-            <Link to={'/detail-logo'} onClick={handleBeliLogoClick}>
+            <Link to={'/detaillogo'} onClick={handleBeliLogoClick}>
               Beli Logo
             </Link>
           </Button>

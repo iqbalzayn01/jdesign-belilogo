@@ -9,8 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import Logo from '@/components/ui/logo';
-import Navbar from '@/components/ui/navbar';
+import Header from '@/components/ui/header';
 
 const dataFitur = [
   {
@@ -30,13 +29,8 @@ const dataFitur = [
 export default function DetailLogo() {
   return (
     <>
-      <header className="mx-auto bg-primarycustom px-3 md:px-10 py-[10px] w-full top-0 z-20">
-        <div className="flex w-full items-center justify-between">
-          <Logo className="w-[145px] p-[10px] fill-white" />
-          <Navbar />
-        </div>
-      </header>
-      <div className="pt-10">
+      <Header />
+      <div className="pt-32">
         <div className="container mx-auto px-5">
           <div className="flex w-full flex-col md:flex-row justify-center gap-5">
             <Card className="size-full lg:size-[40%] py-2.5">
@@ -76,7 +70,7 @@ export default function DetailLogo() {
               })}
               <Separator />
               <Dialog>
-                <DialogTrigger className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full">
+                <DialogTrigger className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] px-7 py-4 text-xl rounded-full">
                   Beli Logo
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[600px]">

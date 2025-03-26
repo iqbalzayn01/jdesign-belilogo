@@ -7,6 +7,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 
 const informasi = [
@@ -33,21 +34,21 @@ export default function SyaratKetentuan() {
       <DialogTrigger asChild>
         <Button
           type="button"
-          className="cursor-pointer bg-transparent text-xs text-primarycustom hover:bg-transparent shadow-none p-0 border-none outline-none focus:outline-none"
+          className="cursor-pointer bg-transparent flex items-start justify-start text-xs text-primarycustom hover:bg-transparent shadow-none p-0 text-left whitespace-normal border-none outline-none focus:outline-none"
         >
           Syarat dan Ketentuan
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[650px] p-9 rounded-4xl">
+      <DialogContent className="sm:max-w-[650px] sm:max-h-full p-9 rounded-4xl flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-[25px]">
             Syarat dan Ketentuan
           </DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-5 text-gray-400">
+        <ScrollArea className="flex max-h-[400px] flex-col gap-2 text-gray-400">
           {informasi.map((info, index) => {
             return (
-              <p key={index} className="text-sm">
+              <p key={index} className="text-xs pb-3">
                 {info.desc}
               </p>
             );
@@ -56,9 +57,9 @@ export default function SyaratKetentuan() {
             Syarat & Ketentuan © 2020 JDesignLogo.com The Terms and Conditions
             are made entirely by us
           </span>
-        </div>
+        </ScrollArea>
         <Separator />
-        <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full">
+        <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-3 text-sm md:text-lg rounded-full">
           Tutup Sementara
         </DialogClose>
       </DialogContent>

@@ -17,18 +17,18 @@ export default function LoginForm({
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card className="relative px-5 py-10">
-        <CardHeader className="mb-5">
-          <CardTitle className="text-[40px] text-center">
+        <CardHeader className="gap-3">
+          <CardTitle className="text-2xl lg:text-[40px] text-center">
             Login Jual Logo
           </CardTitle>
-          <CardDescription className="text-xs text-center">
+          <CardDescription className="text-xs lg:text-sm text-center">
             Silahkan login untuk melanjutkan ke halaman form upload logo anda,
             tulis username dan password dengan benar sesuai yang sudah terdaftar
             oleh admin.
           </CardDescription>
           <Link
             to={'/'}
-            className="absolute top-2 right-2 w-20 h-20 bg-red-500 hover:drop-shadow-[0_6px_6px_rgba(251,44,54,0.25)] text-base text-white rounded-full flex items-center justify-center"
+            className="absolute top-2 right-2 w-16 lg:w-20 h-16 lg:h-20 bg-red-500 hover:drop-shadow-[0_6px_6px_rgba(251,44,54,0.25)] text-sm lg:text-base text-white rounded-full flex items-center justify-center"
           >
             kembali
           </Link>
@@ -42,7 +42,7 @@ export default function LoginForm({
                   name="username"
                   type="text"
                   placeholder="Masukkan Username"
-                  className="text-[15px] font-normal px-6 py-7"
+                  className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                   required
                 />
               </div>
@@ -52,7 +52,7 @@ export default function LoginForm({
                   name="password"
                   type="password"
                   placeholder="Masukkan Password"
-                  className="text-[15px] font-normal px-6 py-7"
+                  className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                   required
                 />
               </div>
@@ -62,13 +62,13 @@ export default function LoginForm({
                   name="nomortelp"
                   type="text"
                   placeholder="Masukkan Nomor Telepon"
-                  className="text-[15px] font-normal px-6 py-7"
+                  className="text-xs md:text-sm placeholder:text-xs placeholder:md:text-sm font-normal p-5 md:p-6"
                   required
                 />
               </div>
               <Button
                 type="submit"
-                className="cursor-pointer w-full bg-primarycustom hover:bg-primarycustom text-xl font-normal py-[30px] rounded-full"
+                className="cursor-pointer w-full bg-primarycustom hover:bg-primarycustom text-lg lg:text-xl font-normal py-[25px] lg:py-[30px] rounded-full"
               >
                 Login Sekarang
               </Button>
