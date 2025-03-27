@@ -19,7 +19,7 @@ export default function Hero() {
       <section className="container mx-auto px-5">
         <div className="flex justify-between pt-16">
           <div className="flex flex-col gap-5">
-            <h1 className="max-w-[865px] text-center lg:text-left text-2xl md:text-[37.5px] lg:text-[75px] text-white">
+            <h1 className="max-w-[865px] text-center lg:text-left text-2xl md:text-[37.5px] lg:text-[60px] text-white">
               Buat Logo Impian Untuk Kualitas Branding yang Berkualitas
             </h1>
             <div className="flex items-center justify-center lg:justify-normal gap-5">
@@ -27,7 +27,7 @@ export default function Hero() {
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-white text-sm md:text-xl text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
+                    className="bg-white text-sm md:text-lg text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
                   >
                     Cari Sekarang
                   </Button>
@@ -40,9 +40,9 @@ export default function Hero() {
                   <div className="flex items-center gap-0">
                     <Button
                       variant={'outline'}
-                      className="cursor-pointer justify-between p-0 w-[255px] md:w-[445px] xl:w-[600px] md:h-12 border-none rounded-l-full"
+                      className="cursor-pointer justify-between p-0 w-[255px] md:w-[410px] xl:w-[600px] md:h-12 border-none rounded-l-full"
                     >
-                      <span className="px-5 md:px-10 md:text-lg text-primarycustom">
+                      <span className="px-5 md:px-10 text-sm md:text-lg text-primarycustom">
                         Entertainment & Media
                       </span>
                     </Button>
@@ -59,7 +59,7 @@ export default function Hero() {
               </Popover>
               <Link
                 to={'/register'}
-                className="bg-amber-500 text-sm md:text-xl text-center text-white hover:drop-shadow-xl px-5 md:px-[45px] py-2 md:py-[16px] rounded-full"
+                className="bg-amber-500 text-sm md:text-lg text-center text-white hover:drop-shadow-xl px-5 md:px-[45px] py-2 md:py-[16px] rounded-full"
               >
                 Daftar Kontributor
               </Link>

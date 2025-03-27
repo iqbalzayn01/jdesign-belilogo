@@ -14,13 +14,13 @@ export default function OfferForm() {
   return (
     <Card
       className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl"
-      style={{
-        padding: 'clamp(2rem, 5vw, 3rem) clamp(0.5rem, 1vw, 1rem',
-      }}
+      // style={{
+      //   padding: 'clamp(2rem, 5vw, 3rem) clamp(0.5rem, 1vw, 1rem',
+      // }}
     >
       <InfoOffer />
       <CardHeader>
-        <CardTitle className="text-3xl font-normal">
+        <CardTitle className="text-xl md:text-2xl font-normal">
           Buat Penawaran Anda
         </CardTitle>
       </CardHeader>
@@ -95,7 +95,7 @@ export default function OfferForm() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-5">
-        <Button className="cursor-pointer bg-primarycustom hover:bg-sky-700 px-[50px] py-[24px] text-[17px] rounded-full">
+        <Button className="cursor-pointer bg-primarycustom hover:bg-sky-700 px-14 py-5 text-base rounded-full">
           Konfirmasi
         </Button>
         <span className="text-[10px] text-gray-400">

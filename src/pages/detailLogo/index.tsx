@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import { Undo2Icon } from 'lucide-react';
 import Header from '@/components/ui/header';
 
 const dataFitur = [
@@ -27,9 +28,24 @@ const dataFitur = [
 ];
 
 export default function DetailLogo() {
+  const isBackButton = [
+    {
+      title: 'Kembali',
+      href: '/',
+      isBackButton: true,
+      style:
+        'bg-[#127CCF] hover:bg-[#127CCF] rounded-full text-[#C4E4FF] hover:text-white px-[45px] py-6',
+      icon: <Undo2Icon />,
+    },
+  ];
+
   return (
     <>
-      <Header />
+      <Header
+        isHeaderControl={false}
+        pageLinks={isBackButton}
+        backgroundColor="bg-primarycustom"
+      />
       <div className="bg-zinc-100 py-32">
         <div className="container mx-auto px-5">
           <div className="flex w-full flex-col md:flex-row justify-center gap-5">

@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
-  DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogContent,
+  DialogDescription,
   DialogTrigger,
   DialogClose,
 } from '@/components/ui/dialog';
@@ -33,7 +34,7 @@ export default function InfoOffer() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="cursor-pointer absolute -top-5 -right-5 w-20 h-20 bg-white hover:bg-gray-200 text-[45px] text-primarycustom font-normal drop-shadow-lg rounded-full flex items-center justify-center">
+        <Button className="cursor-pointer absolute -top-5 -right-5 size-14 bg-white hover:bg-gray-200 text-sm md:text-3xl text-primarycustom font-normal drop-shadow-lg rounded-full flex items-center justify-center">
           ?
         </Button>
       </DialogTrigger>
@@ -41,7 +42,20 @@ export default function InfoOffer() {
         <DialogHeader>
           <DialogTitle className="text-[25px]">Informasi Penawaran</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-5 text-gray-400">
+        <DialogDescription className="flex flex-col gap-5 text-gray-400">
+          {informasi.map((info, index) => {
+            return (
+              <span key={index} className="text-sm">
+                {info.desc}
+              </span>
+            );
+          })}
+          <span className="text-xs">
+            Syarat & Ketentuan © 2020 JDesignLogo.com The Terms and Conditions
+            are made entirely by us
+          </span>
+        </DialogDescription>
+        {/* <div className="flex flex-col gap-5 text-gray-400">
           {informasi.map((info, index) => {
             return (
               <p key={index} className="text-sm">
@@ -53,8 +67,8 @@ export default function InfoOffer() {
             Syarat & Ketentuan © 2020 JDesignLogo.com The Terms and Conditions
             are made entirely by us
           </span>
-        </div>
-        <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-7 text-xl rounded-full">
+        </div> */}
+        <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-3 text-lg md:text-xl rounded-full">
           Tutup Sementara
         </DialogClose>
       </DialogContent>

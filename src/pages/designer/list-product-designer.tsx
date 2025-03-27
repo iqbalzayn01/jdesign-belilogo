@@ -9,7 +9,6 @@ import {
   PaginationPrevious,
   PaginationEllipsis,
 } from '@/components/ui/pagination';
-import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
 
@@ -109,7 +108,6 @@ export default function ListProductDesigner() {
   return (
     <section className="bg-zinc-100">
       <div className="container mx-auto flex flex-col gap-10 px-5 py-20">
-        <Separator />
         <div className="grid gap-10">
           <div>
             <h2 className="text-[38px]">Logo dibuat oleh Designer</h2>
@@ -119,7 +117,7 @@ export default function ListProductDesigner() {
               Logo Design
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 md:gap-5 lg:gap-10">
             {currentProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

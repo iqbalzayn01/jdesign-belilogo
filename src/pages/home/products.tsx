@@ -15,11 +15,11 @@ import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
 
 // Asumsi: data produk diambil dari state atau API
-const products = Array.from({ length: 382 }, (_, index) => ({
+const products = Array.from({ length: 50 }, (_, index) => ({
   id: index,
   name: `Logo ${index + 1}`,
   price: 100000,
-  sold: index < 33, // 4 produk pertama terjual
+  sold: index < 12, // 4 produk pertama terjual
 }));
 
 // Komponen Kartu Produk
@@ -78,7 +78,7 @@ const ProductCard: React.FC<{ product: (typeof products)[0] }> = ({
         </div>
         {!product.sold && (
           <Button
-            className="bg-white hover:bg-zinc-100 text-sm text-black border border-zinc-200"
+            className="bg-white hover:bg-zinc-100 text-xs lg:text-sm text-black border border-zinc-200"
             asChild
           >
             <Link to={'/detaillogo'} onClick={handleBeliLogoClick}>
@@ -87,7 +87,7 @@ const ProductCard: React.FC<{ product: (typeof products)[0] }> = ({
           </Button>
         )}
         {product.sold && (
-          <Badge className="bg-white text-sm text-black border border-zinc-200">
+          <Badge className="bg-white text-xs lg:text-sm text-black border border-zinc-200">
             Terjual
           </Badge>
         )}
@@ -177,7 +177,7 @@ export default function Products() {
               Logo Design
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10">
             {currentProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
