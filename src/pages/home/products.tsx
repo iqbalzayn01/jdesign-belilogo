@@ -15,9 +15,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
 import { usePagination } from '@/hooks/usePagination';
 import { useProducts } from '@/hooks/useProducts';
+import { Product } from '@/types';
 
-// Card Produk Logo
-const ProductCard: React.FC<{ product: any }> = ({ product }) => {
+const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const [localViewCount, setLocalViewCount] = useState(() => {
     const storedViewCount = localStorage.getItem(`viewCount-${product.id}`);
     return storedViewCount ? parseInt(storedViewCount) : 0;
@@ -99,7 +99,6 @@ export default function Products() {
     totalPages,
     setCurrentPage,
   } = usePagination(availableProducts, {
-    totalItems: availableProducts.length,
     itemsPerPage: 12,
   });
 
@@ -131,7 +130,7 @@ export default function Products() {
                 Logo Design
               </p>
               <Link
-                to={'/#'}
+                to={'/terjual'}
                 className="bg-primarycustom w-fit md:w-auto px-5 py-2 text-sm text-white rounded-full"
               >
                 Lihat Semua Logo yang Terjual

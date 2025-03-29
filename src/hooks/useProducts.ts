@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 
 interface UseProductsResult {
@@ -21,7 +22,7 @@ export const useProducts = (): UseProductsResult => {
           id: index,
           name: `Logo ${index + 1}`,
           price: 100000,
-          sold: index < 12, // 4 produk pertama terjual
+          sold: index < 12, // produk yang terjual
         }));
         setProducts(productData);
         setLoading(false);

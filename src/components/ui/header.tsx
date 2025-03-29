@@ -52,9 +52,9 @@ export default function Header({
   }, []);
 
   const defaultHeaderStyle = useMemo(() => {
-    return `mx-auto px-3 md:px-10 py-[10px] fixed drop-shadow-xl lg:drop-shadow-none overflow-hidden w-full transition-all duration-500 ease-in-out top-0 z-20 ${
+    return `mx-auto px-3 md:px-10 py-[10px] fixed overflow-hidden w-full transition-all duration-500 ease-in-out top-0 z-20 ${
       scroll
-        ? 'bg-white/85'
+        ? 'bg-white/85 drop-shadow-xl'
         : isHeaderControl
         ? 'lg:bg-transparent bg-primarycustom'
         : 'bg-primarycustom'
@@ -72,8 +72,8 @@ export default function Header({
   }, [scroll]);
 
   const menuButtonStyle = useMemo(() => {
-    return `cursor-pointer lg:hidden bg-transparent hover:bg-white/5 border-zinc-400/25 shadow-none ${
-      scroll ? 'fill-primarycustom' : 'fill-white/25'
+    return `cursor-pointer lg:hidden bg-transparent hover:bg-white/5 border-zinc-400/30 shadow-none ${
+      scroll ? 'fill-primarycustom' : 'fill-white/60'
     }`;
   }, [scroll]);
 
