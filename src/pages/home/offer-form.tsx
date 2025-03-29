@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -18,6 +18,7 @@ export default function OfferForm() {
   const [budgetPenawaran, setBudgetPenawaran] = useState('');
   const [brand, setBrand] = useState('');
   const [infoLogo, setInfoLogo] = useState('');
+  const alertShown = useRef(false);
 
   const validateInputs = useCallback(() => {
     if (!name) {
@@ -86,6 +87,17 @@ export default function OfferForm() {
     setBudgetPenawaran(values.value);
   };
 
+  const handleBudgetBlur = () => {
+    const numericValue = budgetPenawaran ? parseInt(budgetPenawaran, 10) : 0;
+    if (numericValue < 50000 && !alertShown.current) {
+      alert('Budget minimum adalah Rp 50.000.');
+      setBudgetPenawaran('50000'); // Set budget ke minimum
+      alertShown.current = true;
+    } else {
+      alertShown.current = false;
+    }
+  };
+
   return (
     <Card className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl">
       <InfoOffer />
@@ -139,6 +151,7 @@ export default function OfferForm() {
                   decimalSeparator="."
                   value={budgetPenawaran}
                   onValueChange={handleBudgetChange}
+                  onBlur={handleBudgetBlur}
                   className="h-9 w-full min-w-0 bg-transparent px-1 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
                 />
               </div>
