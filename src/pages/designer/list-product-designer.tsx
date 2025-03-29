@@ -139,7 +139,7 @@ export default function ListProductDesigner() {
 
   return (
     <section className="bg-zinc-100">
-      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
+      <div className="container mx-auto flex flex-col gap-10 px-5 md:px-10 py-24">
         <div className="grid gap-10">
           <div>
             <h2 className="text-[38px]">Logo dibuat oleh Designer</h2>

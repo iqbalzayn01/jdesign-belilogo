@@ -119,7 +119,7 @@ export default function Products() {
 
   return (
     <section className="bg-zinc-100">
-      <div className="container mx-auto flex flex-col gap-10 px-5 py-20">
+      <div className="container mx-auto flex flex-col gap-10 px-5 md:px-10 py-20">
         <div className="grid gap-10">
           <div>
             <h2 className="text-[38px]">Baru Terjual</h2>

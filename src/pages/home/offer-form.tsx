@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -11,13 +12,54 @@ import { Label } from '@/components/ui/label';
 import InfoOffer from './info-offer';
 
 export default function OfferForm() {
+  const [name, setName] = useState('');
+  const [namaBranding, setNamaBranding] = useState('');
+  const [budgetPenawaran, setBudgetPenawaran] = useState('');
+  const [brand, setBrand] = useState('');
+  const [infoLogo, setInfoLogo] = useState('');
+
+  const validateInputs = useCallback(() => {
+    if (!name) {
+      alert('Silahkan tulis Nama Lengkap Anda.');
+      return false;
+    }
+    if (!namaBranding) {
+      alert('Silahkan tulis Nama Branding (Weni Collection).');
+      return false;
+    }
+    if (!budgetPenawaran) {
+      alert('Silahkan tulis Budget Penawaran.');
+      return false;
+    }
+    if (!brand) {
+      alert('Silahkan tulis Bidang Brand Anda.');
+      return false;
+    }
+    if (!infoLogo) {
+      alert('Silahkan tulis Informasi Logo Anda.');
+      return false;
+    }
+    return true;
+  }, [name, namaBranding, budgetPenawaran, brand, infoLogo]);
+
+  const handlePenawaran = useCallback(() => {
+    if (!validateInputs()) return;
+
+    const message = `
+      Nama Lengkap: ${name}
+      Nama Branding: ${namaBranding}
+      Budget Penawaran: ${budgetPenawaran}
+      Bidang Brand: ${brand}
+      Informasi Logo: ${infoLogo}
+    `;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/+6281230757358?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  }, [name, namaBranding, budgetPenawaran, brand, infoLogo, validateInputs]);
+
   return (
-    <Card
-      className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl"
-      // style={{
-      //   padding: 'clamp(2rem, 5vw, 3rem) clamp(0.5rem, 1vw, 1rem',
-      // }}
-    >
+    <Card className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl">
       <InfoOffer />
       <CardHeader>
         <CardTitle className="text-xl md:text-2xl font-normal">
@@ -36,6 +78,8 @@ export default function OfferForm() {
                 name="name"
                 type="text"
                 placeholder="Putri Weni Ramadhani"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
@@ -44,10 +88,12 @@ export default function OfferForm() {
                 Nama Branding anda?
               </Label>
               <input
-                id="brand"
-                name="brand"
+                id="namaBrand"
+                name="namaBrand"
                 type="text"
                 placeholder="Weni Collection"
+                value={namaBranding}
+                onChange={(e) => setNamaBranding(e.target.value)}
                 className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
@@ -57,12 +103,16 @@ export default function OfferForm() {
                 Rp. 50.000
               </Label>
               <div className="flex items-end">
-                <span className="border-b border-primarycustom pb-2">Rp</span>
+                <span className="border-b border-primarycustom pr-2 pb-2">
+                  Rp
+                </span>
                 <input
                   id="price"
                   name="price"
                   type="number"
                   placeholder=""
+                  value={budgetPenawaran}
+                  onChange={(e) => setBudgetPenawaran(e.target.value)}
                   className="h-9 w-full min-w-0 bg-transparent px-1 py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
                 />
               </div>
@@ -76,6 +126,8 @@ export default function OfferForm() {
                 name="brand"
                 type="text"
                 placeholder="Olshop Kecantikan"
+                value={brand}
+                onChange={(e) => setBrand(e.target.value)}
                 className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
@@ -85,9 +137,11 @@ export default function OfferForm() {
                 pesan!
               </Label>
               <Textarea
-                id="info"
-                name="info"
+                id="infoLogo"
+                name="infoLogo"
                 placeholder="Saya ingin logonya nanti memiliki warna orange dan objeknya yang simple saja dan mudah di ingat"
+                value={infoLogo}
+                onChange={(e) => setInfoLogo(e.target.value)}
                 className="h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-0 shadow-none rounded-none outline-0 focus-visible:ring-0 focus-visible:border-ring border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
@@ -95,7 +149,11 @@ export default function OfferForm() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-5">
-        <Button className="cursor-pointer bg-primarycustom hover:bg-sky-700 px-14 py-5 text-base rounded-full">
+        <Button
+          type="submit"
+          onClick={handlePenawaran}
+          className="cursor-pointer bg-primarycustom hover:bg-sky-700 px-14 py-5 text-base rounded-full"
+        >
           Konfirmasi
         </Button>
         <span className="text-[10px] text-gray-400">

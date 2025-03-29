@@ -15,32 +15,31 @@ export const useProducts = (): UseProductsResult => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulasi pengambilan data dari API atau state
-    setTimeout(() => {
-      try {
-        const productData = Array.from({ length: 50 }, (_, index) => ({
-          id: index,
-          name: `Logo ${index + 1}`,
-          price: 100000,
-          sold: index < 12, // produk yang terjual
-        }));
-        setProducts(productData);
-        setLoading(false);
-      } catch (err: any) {
-        setError(err.message || 'Gagal mengambil data produk');
-        setLoading(false);
-      }
-    }, 1000); // Simulasi penundaan 1 detik
+    try {
+      const productData = Array.from({ length: 50 }, (_, index) => ({
+        id: index,
+        name: `Logo ${index + 1}`,
+        price: 100000,
+        sold: index < 12, // produk yang terjual
+      }));
+      setProducts(productData);
+      setLoading(false);
+    } catch (err: any) {
+      setError(err.message || 'Gagal mengambil data produk');
+      setLoading(false);
+    }
   }, []);
 
   const soldProducts = products.filter((product) => product.sold);
   const availableProducts = products.filter((product) => !product.sold);
 
+  console.log(loading);
+
   return {
     products,
     soldProducts,
     availableProducts,
-    loading,
+    loading: false, // Karena tidak ada penundaan, loading selalu false
     error,
   };
 };
