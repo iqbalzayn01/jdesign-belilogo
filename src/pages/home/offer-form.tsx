@@ -181,7 +181,7 @@ export default function OfferForm() {
                 placeholder="Saya ingin logonya nanti memiliki warna orange dan objeknya yang simple saja dan mudah di ingat"
                 value={infoLogo}
                 onChange={(e) => setInfoLogo(e.target.value)}
-                className="h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in shadow-none rounded-none ring-0 outline-0 focus-visible:ring-0 border-x-0 border-t-0 border-b focus:outline-none focus:border-primarycustom"
+                className="border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 border outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in shadow-none rounded-none ring-0 outline-0 focus-visible:ring-0 border-x-0 border-t-0 border-b focus:outline-none focus:border-blue-500"
               />
             </div>
           </div>
