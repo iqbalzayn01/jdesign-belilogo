@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { NumericFormat } from 'react-number-format';
 import InfoOffer from './info-offer';
 
 export default function OfferForm() {
@@ -42,13 +43,25 @@ export default function OfferForm() {
     return true;
   }, [name, namaBranding, budgetPenawaran, brand, infoLogo]);
 
+  const formatRupiah = useCallback((angka: number) => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'decimal',
+      minimumFractionDigits: 0,
+    }).format(angka);
+  }, []);
+
   const handlePenawaran = useCallback(() => {
     if (!validateInputs()) return;
+
+    // Format budgetPenawaran sebelum dikirim
+    const formattedBudget = budgetPenawaran
+      ? formatRupiah(parseInt(budgetPenawaran))
+      : '0';
 
     const message = `
       Nama Lengkap: ${name}
       Nama Branding: ${namaBranding}
-      Budget Penawaran: ${budgetPenawaran}
+      Budget Penawaran: Rp ${formattedBudget}
       Bidang Brand: ${brand}
       Informasi Logo: ${infoLogo}
     `;
@@ -56,7 +69,22 @@ export default function OfferForm() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/+6281230757358?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
-  }, [name, namaBranding, budgetPenawaran, brand, infoLogo, validateInputs]);
+  }, [
+    name,
+    namaBranding,
+    budgetPenawaran,
+    brand,
+    infoLogo,
+    validateInputs,
+    formatRupiah,
+  ]);
+
+  const handleBudgetChange = (values: {
+    formattedValue: string;
+    value: string;
+  }) => {
+    setBudgetPenawaran(values.value);
+  };
 
   return (
     <Card className="relative hidden lg:flex w-[584px] shadow-2xl rounded-3xl">
@@ -80,7 +108,7 @@ export default function OfferForm() {
                 placeholder="Putri Weni Ramadhani"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
+                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -94,7 +122,7 @@ export default function OfferForm() {
                 placeholder="Weni Collection"
                 value={namaBranding}
                 onChange={(e) => setNamaBranding(e.target.value)}
-                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
+                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -103,17 +131,15 @@ export default function OfferForm() {
                 Rp. 50.000
               </Label>
               <div className="flex items-end">
-                <span className="border-b border-primarycustom pr-2 pb-2">
+                <span className="border-b border-primarycustom text-zinc-600 pr-2 pb-2">
                   Rp
                 </span>
-                <input
-                  id="price"
-                  name="price"
-                  type="number"
-                  placeholder=""
+                <NumericFormat
+                  thousandSeparator=","
+                  decimalSeparator="."
                   value={budgetPenawaran}
-                  onChange={(e) => setBudgetPenawaran(e.target.value)}
-                  className="h-9 w-full min-w-0 bg-transparent px-1 py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
+                  onValueChange={handleBudgetChange}
+                  className="h-9 w-full min-w-0 bg-transparent px-1 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
                 />
               </div>
             </div>
@@ -128,7 +154,7 @@ export default function OfferForm() {
                 placeholder="Olshop Kecantikan"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
-                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
+                className="h-9 w-full min-w-0 bg-transparent py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -142,7 +168,7 @@ export default function OfferForm() {
                 placeholder="Saya ingin logonya nanti memiliki warna orange dan objeknya yang simple saja dan mudah di ingat"
                 value={infoLogo}
                 onChange={(e) => setInfoLogo(e.target.value)}
-                className="h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-black transition-colors duration-300 ease-in border-0 shadow-none rounded-none outline-0 focus-visible:ring-0 focus-visible:border-ring border-b focus:outline-none focus:border-primarycustom"
+                className="h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in shadow-none rounded-none ring-0 outline-0 focus-visible:ring-0 border-x-0 border-t-0 border-b focus:outline-none focus:border-primarycustom"
               />
             </div>
           </div>
