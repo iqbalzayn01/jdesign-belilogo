@@ -72,7 +72,7 @@ export default function DetailLogo() {
     `;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/+6285714954784?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/+6281230757358?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   }, [name, branding, whatsappNumber, validateInputs]);
 
