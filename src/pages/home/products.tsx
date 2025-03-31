@@ -199,7 +199,7 @@ export default function Products() {
               </Link>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
             {soldProductsCards}
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function Products() {
               Logo Design
             </p>
           </div>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {currentItemsCards}
           </div>
         </div>
