@@ -16,11 +16,12 @@ export const useProducts = (): UseProductsResult => {
 
   useEffect(() => {
     try {
+      // Data dummy
       const productData = Array.from({ length: 50 }, (_, index) => ({
         id: index,
         name: `Logo ${index + 1}`,
         price: 100000,
-        sold: index < 12, // produk yang terjual
+        sold: index < 24, // produk yang terjual
       }));
       setProducts(productData);
       setLoading(false);

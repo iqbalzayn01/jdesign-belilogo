@@ -134,8 +134,18 @@ export default function ListProductDesigner() {
     ));
   }, [currentItems]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading)
+    return (
+      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
+        <p>Loading...</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
+        <p>Error: {error}</p>
+      </div>
+    );
 
   return (
     <section className="bg-zinc-100">

@@ -56,25 +56,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
   </div>
 );
 
-interface ProductListProps {
-  products: Product[];
-}
-
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
-  const productCards = useMemo(
-    () =>
-      products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      )),
-    [products]
-  );
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-      {productCards}
-    </div>
-  );
-};
-
 interface PaginationComponentProps {
   currentPage: number;
   totalPages: number;
@@ -127,69 +108,6 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
   </Pagination>
 );
 
-interface TerjualProps {
-  loading: boolean;
-  error: string | null;
-  soldProducts: Product[];
-  currentPage: number;
-  pages: (number | string)[];
-  handlePreviousPage: () => void;
-  handleNextPage: () => void;
-  totalPages: number;
-  setCurrentPage: (page: number) => void;
-  currentItems: Product[];
-}
-
-const TerjualContent: React.FC<TerjualProps> = ({
-  loading,
-  error,
-  soldProducts,
-  currentPage,
-  pages,
-  handlePreviousPage,
-  handleNextPage,
-  totalPages,
-  setCurrentPage,
-  currentItems,
-}) => {
-  if (loading)
-    return (
-      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
-        <p>Loading...</p>
-      </div>
-    );
-  if (error)
-    return (
-      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
-        <p>Error: {error}</p>
-      </div>
-    );
-
-  return (
-    <div className="container mx-auto flex flex-col gap-10 px-5 md:px-10 py-24">
-      <div className="grid gap-10">
-        <div className="w-full">
-          <h2 className="text-[38px]">Semua Terjual</h2>
-          <p className="text-sm">
-            Berikut ini adalah jumlah logo yang sudah terjual sebanyak{' '}
-            <span className="text-primarycustom font-bold">{`(${soldProducts.length})`}</span>{' '}
-            Logo Design
-          </p>
-        </div>
-        <ProductList products={currentItems} />
-      </div>
-      <PaginationComponent
-        currentPage={currentPage}
-        totalPages={totalPages}
-        pages={pages}
-        handlePreviousPage={handlePreviousPage}
-        handleNextPage={handleNextPage}
-        setCurrentPage={setCurrentPage}
-      />
-    </div>
-  );
-};
-
 export default function Terjual() {
   const isBackButton = [
     {
@@ -211,23 +129,52 @@ export default function Terjual() {
     setCurrentPage,
     currentItems,
   } = usePagination(soldProducts, { itemsPerPage: 12 });
+  const soldProductsCards = useMemo(() => {
+    return currentItems.map((product) => (
+      <ProductCard key={product.id} product={product} />
+    ));
+  }, [currentItems]);
+
+  if (loading)
+    return (
+      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
+        <p>Loading...</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="container mx-auto flex flex-col gap-10 px-5 py-24">
+        <p>Error: {error}</p>
+      </div>
+    );
 
   return (
     <>
       <Header isHeaderControl={false} pageLinks={isBackButton} />
       <section className="bg-zinc-100">
-        <TerjualContent
-          loading={loading}
-          error={error}
-          soldProducts={soldProducts}
-          currentPage={currentPage}
-          pages={pages}
-          handlePreviousPage={handlePreviousPage}
-          handleNextPage={handleNextPage}
-          totalPages={totalPages}
-          setCurrentPage={setCurrentPage}
-          currentItems={currentItems}
-        />
+        <div className="container mx-auto flex flex-col gap-10 px-5 md:px-20 py-24">
+          <div className="grid gap-10">
+            <div className="w-full">
+              <h2 className="text-[38px]">Semua Terjual</h2>
+              <p className="text-sm">
+                Berikut ini adalah jumlah logo yang sudah terjual sebanyak{' '}
+                <span className="text-primarycustom font-bold">{`(${soldProducts.length})`}</span>{' '}
+                Logo Design
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+              {soldProductsCards}
+            </div>
+          </div>
+          <PaginationComponent
+            currentPage={currentPage}
+            totalPages={totalPages}
+            pages={pages}
+            handlePreviousPage={handlePreviousPage}
+            handleNextPage={handleNextPage}
+            setCurrentPage={setCurrentPage}
+          />
+        </div>
       </section>
       <Footer />
     </>

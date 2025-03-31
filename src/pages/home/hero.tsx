@@ -16,7 +16,7 @@ export default function Hero() {
         backgroundImage: `url('/assets/headernew2.jpg')`,
       }}
     >
-      <section className="container mx-auto px-5 md:px-10">
+      <section className="container mx-auto px-5 md:px-20">
         <div className="flex justify-between pt-16">
           <div className="flex flex-col gap-5">
             <h1 className="max-w-[865px] text-center lg:text-left text-2xl md:text-[37.5px] lg:text-[60px] text-white">
