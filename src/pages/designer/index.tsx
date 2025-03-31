@@ -10,7 +10,7 @@ export default function DesignerPage() {
       href: '/',
       isBackButton: true,
       style:
-        'bg-[#127CCF] hover:bg-[#127CCF] rounded-full text-[#C4E4FF] hover:text-white px-[45px] py-6',
+        'bg-[#127CCF] hover:bg-[#127CCF] rounded-full text-[#C4E4FF] hover:text-white px-6 py-6',
       icon: <Undo2Icon />,
     },
   ];

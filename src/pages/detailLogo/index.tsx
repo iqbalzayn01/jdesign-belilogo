@@ -35,7 +35,7 @@ export default function DetailLogo() {
       href: '/',
       isBackButton: true,
       style:
-        'bg-[#127CCF] hover:bg-[#127CCF] rounded-full text-[#C4E4FF] hover:text-white px-[45px] py-6',
+        'bg-[#127CCF] hover:bg-[#127CCF] rounded-full text-[#C4E4FF] hover:text-white px-6 py-6',
       icon: <Undo2Icon />,
     },
   ];
@@ -92,7 +92,7 @@ export default function DetailLogo() {
               </CardContent>
             </Card>
             <div className="flex size-full lg:size-1/2 flex-col gap-3">
-              <h2 className="text-lg">u for up logo Rp.100.000</h2>
+              <h2 className="text-lg">Nama Brand Logo Rp.100.000</h2>
               <p className="text-xs text-zinc-500 font-medium">
                 Apa saja yang anda dapatkan setelah memesan logo dari
                 JDesignLogo.com? Tentunya anda mendapatkan pelayanan revisi

@@ -191,12 +191,12 @@ export default function Products() {
                 <span className="text-primarycustom font-bold">{`(${soldProducts.length})`}</span>{' '}
                 Logo Design
               </p>
-              <Link
-                to={'/terjual'}
+              <a
+                href={'/terjual'}
                 className="bg-primarycustom w-fit md:w-auto px-5 py-2 text-sm text-white rounded-full"
               >
                 Lihat Semua Logo yang Terjual
-              </Link>
+              </a>
             </div>
           </div>
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
