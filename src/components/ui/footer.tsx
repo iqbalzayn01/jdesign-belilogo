@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-[#2A2B35]">
-        <div className="container mx-auto px-5 py-16 lg:py-32">
+        <div className="container mx-auto px-5 md:px-20 py-16 lg:py-32">
           <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20">
             <div className="flex max-w-[480px] flex-col gap-3">
               <h2 className="text-[22px] text-zinc-400">What's new?</h2>
