@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { NumericFormat } from 'react-number-format';
 import InfoOffer from './info-offer';
@@ -158,18 +157,19 @@ export default function OfferForm() {
               />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="info" className="text-xs text-gray-400">
+              <Label htmlFor="infoLogo" className="text-xs text-gray-400">
                 Berikan kami sedikit informasi mengenai logo yang ingin anda
                 pesan!
               </Label>
-              <Textarea
-                id="infoLogo"
+              <textarea
                 name="infoLogo"
+                id="infoLogo"
+                data-slot="textarea"
                 placeholder="Saya ingin logonya nanti memiliki warna orange dan objeknya yang simple saja dan mudah di ingat"
                 value={infoLogo}
                 onChange={(e) => setInfoLogo(e.target.value)}
-                className="border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 flex field-sizing-content min-h-16 border outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in shadow-none rounded-none ring-0 outline-0 focus-visible:ring-0 border-x-0 border-t-0 border-b focus:outline-none focus:border-blue-500"
-              />
+                className="border-input flex field-sizing-content min-h-16 border outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 w-full min-w-0 bg-transparent px-0 py-1 text-[14px] placeholder:text-zinc-600 transition-colors duration-300 ease-in shadow-none rounded-none ring-0 outline-0 focus-visible:ring-0 border-x-0 border-t-0 border-b focus:outline-none focus:border-blue-500"
+              ></textarea>
             </div>
           </div>
         </form>

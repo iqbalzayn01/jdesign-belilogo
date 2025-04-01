@@ -55,19 +55,6 @@ export default function InfoOffer() {
             are made entirely by us
           </span>
         </DialogDescription>
-        {/* <div className="flex flex-col gap-5 text-gray-400">
-          {informasi.map((info, index) => {
-            return (
-              <p key={index} className="text-sm">
-                {info.desc}
-              </p>
-            );
-          })}
-          <span className="text-xs">
-            Syarat & Ketentuan © 2020 JDesignLogo.com The Terms and Conditions
-            are made entirely by us
-          </span>
-        </div> */}
         <DialogClose className="cursor-pointer w-full bg-primarycustom hover:bg-sky-600 text-white hover:drop-shadow-[0_5px_5px_rgba(0,132,209,0.35)] p-3 text-lg md:text-xl rounded-full">
           Tutup Sementara
         </DialogClose>

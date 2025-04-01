@@ -40,12 +40,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <CardContent className="px-2.5">
           <div className="aspect-video rounded-xl bg-muted/50" />
         </CardContent>
-        <a
-          href={'/designer'}
+        <Link
+          to={'/designer'}
           className="absolute bottom-0 right-0 z-10 bg-zinc-50 text-[10px] text-zinc-500 border px-1 lg:px-3 py-1 rounded-full"
         >
           Lihat Designer
-        </a>
+        </Link>
         {!product.sold && (
           <Badge className="absolute bottom-0 right-0 w-full bg-zinc-50 text-xs text-zinc-500 border border-zinc-200 px-3 py-1 rounded-full">
             <svg
@@ -191,12 +191,12 @@ export default function Products() {
                 <span className="text-primarycustom font-bold">{`(${soldProducts.length})`}</span>{' '}
                 Logo Design
               </p>
-              <a
-                href={'/terjual'}
+              <Link
+                to={'/terjual'}
                 className="bg-primarycustom w-fit md:w-auto px-5 py-2 text-sm text-white rounded-full"
               >
                 Lihat Semua Logo yang Terjual
-              </a>
+              </Link>
             </div>
           </div>
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
