@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Proyek Logo Design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah aplikasi web yang dibangun menggunakan React, TypeScript, Vite, dan Shadcn UI. Aplikasi ini menyediakan platform untuk membeli logo desain.
 
-Currently, two official plugins are available:
+## Teknologi yang Digunakan
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React:** Pustaka JavaScript untuk membangun antarmuka pengguna. [https://react.dev/](https://reactjs.org/)
+- **TypeScript:** Bahasa pemrograman yang menambahkan tipe statis ke JavaScript. [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- **Vite:** Alat build yang cepat untuk aplikasi web modern. [https://vite.dev/](https://vitejs.dev/)
+- **Shadcn UI:** Komponen UI yang dapat dikustomisasi untuk React. [https://ui.shadcn.com/](https://ui.shadcn.com/)
+- **pnpm:** Pengelola paket JavaScript yang cepat dan efisien. [https://pnpm.io/](https://pnpm.io/)
 
-## Expanding the ESLint configuration
+## Instalasi
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  Kloning repositori.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+````
+  git clone https://github.com/iqbalzayn01/jdesign-belilogo.git nama_folder
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  Buka direktori proyek.
+3.  Jalankan perintah berikut untuk menginstal dependensi:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  ```bash
+  pnpm install
+  ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Menjalankan Aplikasi
+
+- Untuk menjalankan aplikasi dalam mode pengembangan, gunakan perintah berikut:
+
+```bash
+pnpm run dev
+````
+
+- Untuk membuat build produksi, gunakan perintah berikut:
+
+  ```bash
+  pnpm run build
+  ```
+
+- Untuk menjalankan build produksi, gunakan perintah berikut:
+
+  ```bash
+  pnpm run preview
+  ```
