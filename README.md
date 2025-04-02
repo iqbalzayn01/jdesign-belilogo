@@ -14,16 +14,16 @@ Proyek ini adalah aplikasi web yang dibangun menggunakan React, TypeScript, Vite
 
 1.  Kloning repositori.
 
-````
-  git clone https://github.com/iqbalzayn01/jdesign-belilogo.git nama_folder
-  ```
+```bash
+git clone https://github.com/iqbalzayn01/jdesign-belilogo.git nama_folder
+```
 
 2.  Buka direktori proyek.
 3.  Jalankan perintah berikut untuk menginstal dependensi:
 
-  ```bash
-  pnpm install
-  ```
+```bash
+pnpm install
+```
 
 ## Menjalankan Aplikasi
 
@@ -31,7 +31,7 @@ Proyek ini adalah aplikasi web yang dibangun menggunakan React, TypeScript, Vite
 
 ```bash
 pnpm run dev
-````
+```
 
 - Untuk membuat build produksi, gunakan perintah berikut:
 
