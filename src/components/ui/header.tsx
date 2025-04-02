@@ -78,7 +78,7 @@ export default function Header({
   }, [scroll]);
 
   return (
-    <header className={headerStyle}>
+    <header className={`${headerStyle}`}>
       <div className="flex w-full items-center justify-between">
         <Logo className={logoStyle} />
         <div className="absolute lg:relative lg:w-auto translate-y-3/5 lg:translate-y-0">

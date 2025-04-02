@@ -140,7 +140,11 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
   </Pagination>
 );
 
-export default function Products() {
+interface ProductsProps {
+  productsRef: React.RefObject<HTMLElement | null>;
+}
+
+export default function Products({ productsRef }: ProductsProps) {
   const { soldProducts, availableProducts, loading, error } = useProducts();
   const {
     currentPage,
@@ -180,7 +184,7 @@ export default function Products() {
     );
 
   return (
-    <section className="bg-zinc-100">
+    <section ref={productsRef} id="products" className="bg-zinc-100">
       <div className="container mx-auto flex flex-col gap-10 px-5 md:px-20 py-20">
         <div className="grid gap-10">
           <div>

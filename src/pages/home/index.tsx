@@ -1,9 +1,11 @@
+import { useRef } from 'react';
 import Header from '@/components/ui/header';
 import Footer from '@/components/ui/footer';
 import Hero from './hero';
 import Products from './products';
 
 export default function Homepage() {
+  const productsRef = useRef<HTMLElement>(null);
   const dribbbleLink = [
     {
       title: 'Dribbble',
@@ -16,8 +18,8 @@ export default function Homepage() {
   return (
     <>
       <Header isHeaderControl={true} pageLinks={dribbbleLink} />
-      <Hero />
-      <Products />
+      <Hero productsRef={productsRef} />
+      <Products productsRef={productsRef} />
       <Footer />
     </>
   );

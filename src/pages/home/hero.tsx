@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
@@ -6,9 +5,35 @@ import {
 } from '@/components/ui/popover';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import OfferForm from './offer-form';
 
-export default function Hero() {
+const dataSearchItems = [
+  'Entertainment & Media',
+  'Technology',
+  'Fashion',
+  'Food & Beverage',
+  'Travel & Hospitality',
+];
+
+interface HeroProps {
+  productsRef: React.RefObject<HTMLElement | null>;
+}
+
+export default function Hero({ productsRef }: HeroProps) {
+  const handleSearchClick = () => {
+    if (productsRef.current) {
+      productsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div
       className="flex items-center justify-center h-[600px] md:h-[920px] bg-cover bg-center bg-no-repeat bg-fixed"
@@ -27,32 +52,50 @@ export default function Hero() {
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
-                    className="bg-white text-sm md:text-lg text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
+                    className="cursor-pointer bg-white text-sm md:text-lg text-center text-primarycustom hover:text-primarycustom hover:drop-shadow-xl px-5 md:px-[45px] md:py-[29px] rounded-full"
                   >
                     Cari Sekarang
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent
                   className="bg-transparent border-0 p-0 hover:drop-shadow-xl shadow-none"
+                  style={{ zIndex: 10 }}
                   align="start"
                   sideOffset={20}
                 >
                   <div className="flex items-center gap-0">
-                    <Button
-                      variant={'outline'}
-                      className="cursor-pointer justify-between p-0 w-[255px] md:w-[410px] xl:w-[600px] md:h-12 border-none rounded-l-full"
-                    >
-                      <span className="px-5 md:px-10 text-sm md:text-lg text-primarycustom">
-                        Entertainment & Media
-                      </span>
-                    </Button>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="cursor-pointer justify-between px-5 md:px-10 text-sm md:text-lg text-primarycustom w-[250px] md:w-[375px] xl:w-[500px] md:h-12 border-none rounded-l-full"
+                        >
+                          Entertainment & Media
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="w-[255px] md:w-[410px] xl:w-[600px]">
+                        <DropdownMenuGroup>
+                          {dataSearchItems.map((search, index) => (
+                            <DropdownMenuItem
+                              key={index}
+                              className="px-5 md:px-10 text-sm md:text-lg text-primarycustom"
+                            >
+                              {search}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuGroup>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                     <Button
                       variant={'outline'}
                       className="cursor-pointer bg-transparent justify-between p-0 md:h-12 border-none rounded-full"
+                      asChild
                     >
-                      <span className="flex items-center justify-around bg-amber-500 w-16 h-9 md:h-12 rounded-r-full">
-                        <Search color="white" />
-                      </span>
+                      <Link to="#products" onClick={handleSearchClick}>
+                        <span className="flex items-center justify-around bg-amber-500 w-10 md:w-16 h-9 md:h-12 rounded-r-full">
+                          <Search color="white" />
+                        </span>
+                      </Link>
                     </Button>
                   </div>
                 </PopoverContent>
